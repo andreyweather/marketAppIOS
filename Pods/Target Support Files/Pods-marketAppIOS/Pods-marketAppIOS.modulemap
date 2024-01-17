@@ -1,0 +1,6 @@
+framework module Pods_marketAppIOS {
+  umbrella header "Pods-marketAppIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

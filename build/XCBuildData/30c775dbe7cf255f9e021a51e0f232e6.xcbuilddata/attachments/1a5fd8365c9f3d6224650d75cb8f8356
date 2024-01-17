@@ -1,0 +1,5 @@
+ extern const unsigned char Pods_marketAppIOSTestsVersionString[];
+ extern const double Pods_marketAppIOSTestsVersionNumber;
+
+ const unsigned char Pods_marketAppIOSTestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_marketAppIOSTests  PROJECT:Pods-1" "\n";
+ const double Pods_marketAppIOSTestsVersionNumber __attribute__ ((used)) = (double)1.;

@@ -1,0 +1,53 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e986531c7f9a9226a7c66875defd0714b49"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e9895d766e252df7cb6f3b036857548b5e3"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e98bd75b7fcec4c2bbd65850fe1ceebc7a2"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e987935b34cd9738251ef040f4c3b61c67e"
+    }
+  ],
+  "containerPath" : "/Users/andrey.pogodin/Desktop/marketAppIOS/Pods/Pods.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/andrey.pogodin/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/andrey.pogodin/Library/Developer/Xcode/DerivedData/Pods-furqfizfufrvynbugbcnqefpfiga/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/andrey.pogodin/Library/Developer/Xcode/DerivedData/Pods-furqfizfufrvynbugbcnqefpfiga/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : false,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : false
+}

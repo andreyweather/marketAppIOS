@@ -1,0 +1,16 @@
+PODS:
+  - enkodpushlibrary (1.3.12)
+
+DEPENDENCIES:
+  - enkodpushlibrary
+
+SPEC REPOS:
+  trunk:
+    - enkodpushlibrary
+
+SPEC CHECKSUMS:
+  enkodpushlibrary: 680424173ed717c6ed0b7f2d36f74064239ff738
+
+PODFILE CHECKSUM: c526137e4bc6739bb218c355e031998f0e7f280e
+
+COCOAPODS: 1.14.3

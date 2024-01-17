@@ -1,0 +1,8 @@
+Target dependency graph (4 targets)
+Target 'Pods-marketAppIOSTests' in project 'Pods'
+➜ Explicit dependency on target 'Pods-marketAppIOS' in project 'Pods'
+Target 'Pods-marketAppIOS-marketAppIOSUITests' in project 'Pods'
+➜ Explicit dependency on target 'enkodpushlibrary' in project 'Pods'
+Target 'Pods-marketAppIOS' in project 'Pods'
+➜ Explicit dependency on target 'enkodpushlibrary' in project 'Pods'
+Target 'enkodpushlibrary' in project 'Pods' (no dependencies)

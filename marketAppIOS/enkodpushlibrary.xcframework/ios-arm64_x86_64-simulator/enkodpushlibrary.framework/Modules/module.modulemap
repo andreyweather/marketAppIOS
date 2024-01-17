@@ -1,0 +1,11 @@
+framework module enkodpushlibrary {
+  umbrella header "enkodpushlibrary.h"
+
+  export *
+  module * { export * }
+}
+
+module enkodpushlibrary.Swift {
+  header "enkodpushlibrary-Swift.h"
+  requires objc
+}

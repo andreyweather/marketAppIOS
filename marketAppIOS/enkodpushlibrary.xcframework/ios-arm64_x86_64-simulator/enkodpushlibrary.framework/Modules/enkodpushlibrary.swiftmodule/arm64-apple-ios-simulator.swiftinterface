@@ -1,0 +1,129 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name enkodpushlibrary
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+import UIKit
+import UserNotifications
+import _Concurrency
+import _StringProcessing
+@_exported import enkodpushlibrary
+public protocol PushNotificationServiceDelegate : AnyObject {
+  func getPushData(_ pushData: enkodpushlibrary.PushData)
+}
+public enum PushNotificationService {
+  weak public static var delegate: (any enkodpushlibrary.PushNotificationServiceDelegate)?
+  public static func setAccount(_ ac: Swift.String)
+  @discardableResult
+  public static func notificationData(_ data: [Swift.String : Swift.AnyObject]) -> Swift.AnyObject?
+  @discardableResult
+  public static func notificationData(_ data: [Swift.AnyHashable : Any]) -> Swift.AnyObject?
+  @discardableResult
+  public static func setDeviceToken(_ deviceToken: Foundation.Data) -> Swift.String
+  @discardableResult
+  public static func setDeviceToken(_ token: Swift.String) -> Swift.String
+  public static func registerForPushNotifications()
+  public static func unsubscribePush()
+  public static func subscribePush()
+  public static func subscribeDeeplink(_ delegate: Swift.AnyObject)
+  public static func unsubscribeDeeplink()
+}
+public struct PushData : Swift.Encodable {
+  public var pushID: Swift.String?
+  public var title: Swift.String?
+  public var subtitle: Swift.String?
+  public var body: Swift.String?
+  public var badge: Swift.Int?
+  public var intent: Swift.String?
+  public var url: Swift.String?
+  public var category: Swift.String?
+  public var personID: Swift.Int?
+  public var messageID: Swift.String?
+  public var buttons: [Swift.String : enkodpushlibrary.Button]?
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct Button : Swift.Encodable {
+  public var id: Swift.String?
+  public var label: Swift.String?
+  public var action: Swift.String?
+  public var link: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public protocol SessionServiceDelegate : AnyObject {
+  func sessionCreated()
+  func sessionStarted()
+  func pushSubscribed()
+  func pushUnsubscribed()
+  func pushClicked()
+  func tokenRefreshed()
+  func failure(error: any Swift.Error)
+}
+public struct Urls {
+}
+public enum SessionService {
+  weak public static var delegate: (any enkodpushlibrary.SessionServiceDelegate)?
+  public static func setUrls()
+  public static func getUrls()
+  public static func subscribePush(account: Swift.String, token: Swift.String, sessionID: Swift.String)
+  public static func unsubscribePush(account: Swift.String, sessionID: Swift.String)
+  public static func clickPush(pd: enkodpushlibrary.PushData)
+}
+public protocol TrackerServiceDelegate : AnyObject {
+  func failure(_ error: any Swift.Error)
+  func productAdded(_ pId: Swift.String)
+  func productRemoved()
+  func productLiked()
+  func productDisliked()
+  func subscribed()
+  func productOpened()
+  func productBuyed()
+  func pageOpened()
+  func extrafieldsAdded()
+  func contactsUpdated()
+}
+public struct Subscriber {
+  public var email: Swift.String?
+  public var phone: Swift.String?
+  public var firstName: Swift.String?
+  public var lastName: Swift.String?
+  public var groups: [Any]?
+  public var mainChannel: Swift.String?
+  public var integrations: [Swift.Int64]?
+  public var extrafields: [Swift.String : Any]?
+  public init()
+}
+public struct Product {
+  public var id: Swift.String
+  public var count: Swift.Int64?
+  public var groupId: Swift.String?
+  public var fields: [Swift.String : Any]?
+}
+extension enkodpushlibrary.Product {
+  public init(id: Swift.String)
+}
+public struct Order {
+  public var orderId: Swift.String?
+  public var sum: Swift.Float64?
+  public var price: Swift.Float64?
+  public var fields: [Swift.String : Any]?
+  public init()
+}
+public enum TrackerService {
+  weak public static var delegate: (any enkodpushlibrary.TrackerServiceDelegate)?
+  public static func parseProduct(_ data: Swift.String) -> enkodpushlibrary.Product?
+  public static func productAdd(_ product: enkodpushlibrary.Product)
+  public static func productRemove(_ product: enkodpushlibrary.Product)
+  public static func productLike(_ product: enkodpushlibrary.Product)
+  public static func productDislike(_ product: enkodpushlibrary.Product)
+  public static func parseMap(text: Swift.String) -> [Swift.String : Any]?
+  public static func parseSubscriber(text: Swift.String) -> enkodpushlibrary.Subscriber?
+  public static func subscribe(s: enkodpushlibrary.Subscriber)
+  public static func clearCart()
+  public static func productBuy(order: enkodpushlibrary.Order)
+  public static func productOpen(product: enkodpushlibrary.Product)
+  public static func addExtrafields(fields: [Swift.String : Any])
+  public static func pageOpen(url: Swift.String)
+  public static func logOut()
+  public static func updateContacts(email: Swift.String, phone: Swift.String)
+}
